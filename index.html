@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainDiv{
+            width:70%;
+            height:95vh;
+            margin:auto;
+            border: 15px solid red;
+            border-radius: 3%;
+            overflow-y: scroll;
+           
+        }
+        #mainDiv>h1{
+            /* border: 1px solid red; */
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+
+    </div>
+</body>
+</html>
+<script>
+        var mainDiv=document.getElementById("mainDiv");
+      var count=1
+    
+        function add(){
+           for(var i=0;i<25;i++){
+               var text=document.createElement("h1");
+               text.innerText=`Masai School ${count}`
+               count++;
+                 mainDiv.appendChild(text)       
+           }
+        }
+        
+        add()
+        mainDiv.addEventListener("scroll",()=>{
+         if(mainDiv.offsetHeight+mainDiv.scrollTop>=mainDiv.scrollHeight){
+             add()
+         }
+        })
+
+</script>
